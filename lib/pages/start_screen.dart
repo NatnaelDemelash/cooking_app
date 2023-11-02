@@ -39,11 +39,12 @@ class StartScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              Row(
-                children: const [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
                   Button(color: Color.fromRGBO(255, 206, 93, 1), text: 'Login'),
                   Button(
-                      color: Color.fromRGBO(64, 193, 167, 1), text: 'Sign Up')
+                      color: Color.fromRGBO(66, 192, 167, 1), text: 'Sign Up'),
                 ],
               )
             ],
@@ -53,3 +54,6 @@ class StartScreen extends StatelessWidget {
     );
   }
 }
+
+
+// Color.fromRGBO(255, 206, 93, 1)

@@ -1,3 +1,4 @@
+import 'package:cooking_app/pages/food_detail.dart';
 import 'package:flutter/material.dart';
 
 class Recipes extends StatelessWidget {
@@ -15,45 +16,55 @@ class Recipes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 180,
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(18),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const FoodDetail(),
+          ),
+        );
+      },
+      child: Container(
+        height: 200,
+        width: 180,
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Image.asset(foodImg),
             ),
-            child: Image.asset(foodImg),
-          ),
-          const SizedBox(height: 15),
-          Text(
-            foodTitle,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 15),
-          Text(
-            lessonInfo,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-          ),
-          const SizedBox(height: 15),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.favorite_border),
-              SizedBox(width: 20),
-              Icon(Icons.arrow_outward_outlined)
-            ],
-          )
-        ],
+            const SizedBox(height: 15),
+            Text(
+              foodTitle,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 15),
+            Text(
+              lessonInfo,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 15),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.favorite_border),
+                SizedBox(width: 20),
+                Icon(Icons.arrow_outward_outlined)
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -122,7 +122,7 @@ class MainPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 12.0, bottom: 12.0),
                 child: Text(
-                  'Latest Rexipes',
+                  'Latest Recipes',
                   style: GoogleFonts.ubuntu(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
